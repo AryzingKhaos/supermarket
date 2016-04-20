@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+	<!-- 注意在configuration标签中不能随便调换主要标签顺序
+	顺序如下
+	properties
+	settings
+	typeAliases
+	environments
+	mappers
+	 -->
+
+	 <!-- 引用db.properties配置文件 -->
+	<properties resource="db.properties"/>
+	
+	
+	<!-- 这样就可以为com.netease.course.web.controller.Blog类定义了一个别名为_User，
+	以后_User就代表了com.netease.course.web.controller.Blog类，
+	这样sql映射xml文件中的凡是需要引用com.netease.course.web.controller.Blog类的地方都可以使用_Blog来代替，
+	这就达到了一个简化实体类引用的目的。 -->
+	
+	<typeAliases>
+    <typeAlias type="com.supermarket.mysql.person" alias="_person"/>
+	</typeAliases>
+	
+	
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    
+    
+    <mappers>        
+    
+    	<!-- 注册userMapper.xml文件， 
+        userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml-->
+        <mapper resource="com/supermarket/mapper/personMapper.xml"/>
+        <mapper resource="com/supermarket/mapper/contentMapper.xml"/>
+        <mapper resource="com/supermarket/mapper/trxMapper.xml"/>
+    
+        <!-- 注册orderMapper.xml文件， 
+        orderMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/orderMapper.xml-->
+        <!-- <mapper resource="com/netease/course/web/mapping/blogMapper.xml"/> -->
+	</mappers>
+	
+</configuration>
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.supermarket.mapper.contentMapper">
+    <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
+    使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+    resultType="me.gacl.domain.User"就表示将查询结果封装成一个User类的对象返回
+    User类就是users表所对应的实体类
+    -->
+      <!-- 
+        根据id查询得到一个user对象
+     -->
+     
+     <select id="getContent" parameterType="int" 
+        resultType="com.supermarket.mysql.content">
+        select * from content where id=#{id}
+    </select>
+    
+    <!-- 创建用户(Create) -->
+    <insert id="addContent" parameterType="com.supermarket.mysql.content">
+        insert into content(title,icon,abstracts,text,price) 
+        values(#{title},#{icon},#{abstracts},#{text},#{price})
+    </insert>
+    
+     <select id="getContentbyAllElement" parameterType="com.supermarket.mysql.content" 
+        resultType="com.supermarket.mysql.content">
+        select * from content where title=#{title} and icon=#{icon} and abstracts=#{abstracts} and text=#{text} and price=#{price}
+    </select>
+    
+    <!-- 删除用户(Remove) -->
+    <delete id="deleteContent" parameterType="int">
+        delete from content where id=#{id}
+    </delete>
+    
+    <!-- 修改用户(Update) -->
+    <update id="updateContent" parameterType="com.supermarket.mysql.content">
+        update content set title=#{title},abstracts=#{abstracts},
+        icon=#{icon},text=#{text},price=#{price}  where id=#{id}
+    </update>
+    
+    <!-- 查询全部用户-->
+    <select id="getAllContent" resultType="com.supermarket.mysql.content">
+        select * from content
+    </select>
+    
+</mapper>

@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/supermarket/controller/marketController.java=UTF-8
+encoding//src/main/java/com/supermarket/mysql/content.java=UTF-8
+encoding//src/main/java/com/supermarket/service/impl/setProductImpl.java=UTF-8
+encoding//src/main/java/com/supermarket/service/setProduct.java=UTF-8
+encoding//src/main/webapp/WEB-INF/template/account.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/edit.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/editSubmit.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/include/footer.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/include/head.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/include/header.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/include/support.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/index.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/login.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/public.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/publicSubmit.ftl=UTF-8
+encoding//src/main/webapp/WEB-INF/template/show.ftl=UTF-8
